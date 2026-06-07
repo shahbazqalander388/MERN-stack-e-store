@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased selection:bg-primary-500 selection:text-white;
+  }
+}
+
+/* Glassmorphism custom classes */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Hide scrollbars for carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Utility buttons */
+.btn-primary {
+  @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-2.5 px-5 rounded-xl transition duration-300 shadow-md shadow-primary-500/10 active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900 disabled:opacity-50 disabled:pointer-events-none;
+}
+
+.btn-secondary {
+  @apply bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 font-medium py-2.5 px-5 border border-slate-200 dark:border-slate-700 rounded-xl transition duration-300 shadow-sm active:scale-[0.98] focus:outline-none disabled:opacity-50 disabled:pointer-events-none;
+}
+
+.btn-danger {
+  @apply bg-red-600 hover:bg-red-700 text-white font-medium py-2.5 px-5 rounded-xl transition duration-300 shadow-md shadow-red-500/10 active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900 disabled:opacity-50 disabled:pointer-events-none;
+}
+
+/* Form Input, Select, and Textarea Styling */
+.form-input {
+  @apply w-full bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 border-2 border-slate-200 dark:border-slate-700 rounded-xl py-3 px-4 text-sm placeholder-slate-400 dark:placeholder-slate-500 transition duration-300;
+}
+
+.form-input:focus {
+  @apply outline-none border-primary-500 dark:border-primary-400 ring-2 ring-primary-500 dark:ring-primary-400 ring-opacity-20 shadow-md shadow-primary-500/10 dark:shadow-primary-400/10;
+}
+
+.form-input:disabled {
+  @apply opacity-60 cursor-not-allowed bg-slate-100 dark:bg-slate-800;
+}
+
+/* Select and Dropdown Styling */
+.form-select {
+  @apply w-full appearance-none bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 border-2 border-slate-200 dark:border-slate-700 rounded-xl py-3 px-4 text-sm font-medium transition duration-300 cursor-pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' clip-rule='evenodd'/%3E%3C/svg%3E");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+}
+
+.dark .form-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='white'%3E%3Cpath fill-rule='evenodd' d='M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z' clip-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.form-select:focus {
+  @apply outline-none border-primary-500 dark:border-primary-400 ring-2 ring-primary-500 dark:ring-primary-400 ring-opacity-20 shadow-md shadow-primary-500/10 dark:shadow-primary-400/10;
+}
+
+.form-select:disabled {
+  @apply opacity-60 cursor-not-allowed bg-slate-100 dark:bg-slate-800;
+}
+
+/* Select and Dropdown Options Styling */
+.form-select option {
+  @apply bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 py-2 px-3;
+}
+
+.form-select option:hover {
+  @apply bg-slate-100 dark:bg-slate-700;
+}
+
+.form-select option:checked {
+  @apply bg-primary-500 dark:bg-primary-600 text-white;
+}
